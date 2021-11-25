@@ -1,5 +1,8 @@
 import React from 'react';
 import { render } from "react-dom";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import {
 	BrowserRouter,
@@ -8,23 +11,36 @@ import {
 } from "react-router-dom";
 
 import { Container } from 'react-bootstrap';
+
+import rootReducer from "./reducers/index";
+
 // Pages
-import Homepage from './Pages/Homepage'
+import Homepage from './pages/homepage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
 
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk)
+);
+
+// Support Environment variables
+require('dotenv').config()
+
 const rootElement = document.getElementById("root");
+
 render(
 	<BrowserRouter>
-		<Container className="main-container">
-			<Routes>
-				<Route path="/" element={<Homepage />} />
-
-			</Routes>
-		</Container>
+		<Provider store={store}>
+			<Container className="main-container">
+				<Routes>
+					<Route path="/" element={<Homepage />} />
+				</Routes>
+			</Container>
+		</Provider>
 	</BrowserRouter>,
 	rootElement
 );

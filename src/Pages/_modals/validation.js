@@ -4,8 +4,8 @@ export default function validation(event) {
         [event.target.name]: event.target.value
     }
 
-    if(event.target.name == "name"){
-        if(event.target.value == ""){
+    if(event.target.name === "name"){
+        if(event.target.value === ""){
             stateChange['nameInvalid'] = true;
             stateChange['nameErr'] = 'Name is required';
             stateChange['nameValid'] = false;
@@ -22,8 +22,8 @@ export default function validation(event) {
         }
     }
 
-    if(event.target.name == "nickname"){
-        if(event.target.value == ""){
+    if(event.target.name === "nickname"){
+        if(event.target.value === ""){
             stateChange['nicknameInvalid'] = false;
             stateChange['nicknameValid'] = false;
         }else{
@@ -39,8 +39,8 @@ export default function validation(event) {
         }
     }
 
-    if(event.target.name == "gender"){
-        if(event.target.value == ""){
+    if(event.target.name === "gender"){
+        if(event.target.value === ""){
             stateChange['genderInvalid'] = true;
             stateChange['genderErr'] = 'gender is required';
             stateChange['genderValid'] = false;
@@ -50,8 +50,8 @@ export default function validation(event) {
         }
     }
 
-    if(event.target.name == "friendliness"){
-        if(event.target.value == ""){
+    if(event.target.name === "friendliness"){
+        if(event.target.value === ""){
             stateChange['friendlinessInvalid'] = false;
             stateChange['friendlinessValid'] = false;
         }else{
@@ -61,8 +61,8 @@ export default function validation(event) {
     }
 
 
-    if(event.target.name == "height"){
-        if(event.target.value == ""){
+    if(event.target.name === "height"){
+        if(event.target.value === ""){
             stateChange['heightInvalid'] = true;
             stateChange['heightErr'] = 'height is required';
             stateChange['heightValid'] = false;
@@ -99,8 +99,8 @@ export default function validation(event) {
     }
 
 
-    if(event.target.name == "weight"){
-        if(event.target.value == ""){
+    if(event.target.name === "weight"){
+        if(event.target.value === ""){
             stateChange['weightInvalid'] = true;
             stateChange['weightErr'] = 'weight is required';
             stateChange['weightValid'] = false;
@@ -136,8 +136,8 @@ export default function validation(event) {
         }
     }
 
-    if(event.target.name == "color"){
-        if(event.target.value == ""){
+    if(event.target.name === "color"){
+        if(event.target.value === ""){
             stateChange['colorInvalid'] = false;
             stateChange['colorValid'] = false;
         }else{
